@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator.Trav
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator.Surfing", "Ecoternative.Evaluator.Surfing\Ecoternative.Evaluator.Surfing.csproj", "{10D42CE4-4A92-481E-BAED-0685B91C3A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Api", "Ecoternative.Api\Ecoternative.Api.csproj", "{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Api", "Ecoternative.Api\Ecoternative.Api.csproj", "{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Core", "Ecoternative.Core\Ecoternative.Core.csproj", "{EC508658-8030-4135-B936-BEB8C041357E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC508658-8030-4135-B936-BEB8C041357E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC508658-8030-4135-B936-BEB8C041357E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC508658-8030-4135-B936-BEB8C041357E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC508658-8030-4135-B936-BEB8C041357E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

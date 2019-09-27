@@ -1,8 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ecoternative.Core\Ecoternative.Core.csproj" />
+    <ProjectReference Include="..\Ecoternative.Evaluator.Shopping\Ecoternative.Evaluator.Shopping.csproj" />
+    <ProjectReference Include="..\Ecoternative.Evaluator.Surfing\Ecoternative.Evaluator.Surfing.csproj" />
+    <ProjectReference Include="..\Ecoternative.Evaluator.Travel\Ecoternative.Evaluator.Travel.csproj" />
+  </ItemGroup>
 
 </Project>

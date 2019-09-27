@@ -15,4 +15,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ecoternative.Core\Ecoternative.Core.csproj" />
+    <ProjectReference Include="..\Ecoternative.Evaluator\Ecoternative.Evaluator.csproj" />
+  </ItemGroup>
+
 </Project>

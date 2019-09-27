@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ecoternative.Api.Models
+namespace Ecoternative.Core.Models
 {
     public class AlternativeRequestModel
     {
         /// <summary>
         /// Selection of the subsystem to be used
         /// </summary>
-        public EcoSystem System { get; set; }
+        public string System { get; set; }
         /// <summary>
         /// Request string
         /// </summary>
