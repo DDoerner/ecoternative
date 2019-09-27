@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Api", "Ecoternative.Api\Ecoternative.Api.csproj", "{BAC7C38B-FC46-469B-87A9-AF6107699009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator", "Ecoternative.Evaluator\Ecoternative.Evaluator.csproj", "{38B6044C-B329-45CA-AD0F-FD1268541E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Evaluator", "Ecoternative.Evaluator\Ecoternative.Evaluator.csproj", "{38B6044C-B329-45CA-AD0F-FD1268541E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator.Shopping", "Ecoternative.Evaluator.Shopping\Ecoternative.Evaluator.Shopping.csproj", "{50A36E7F-5D82-4132-A3C5-F35973AA9C94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Evaluator.Shopping", "Ecoternative.Evaluator.Shopping\Ecoternative.Evaluator.Shopping.csproj", "{50A36E7F-5D82-4132-A3C5-F35973AA9C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator.Travel", "Ecoternative.Evaluator.Travel\Ecoternative.Evaluator.Travel.csproj", "{650D3404-9D97-44E1-B234-90D63B878F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Evaluator.Travel", "Ecoternative.Evaluator.Travel\Ecoternative.Evaluator.Travel.csproj", "{650D3404-9D97-44E1-B234-90D63B878F46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecoternative.Evaluator.Surfing", "Ecoternative.Evaluator.Surfing\Ecoternative.Evaluator.Surfing.csproj", "{10D42CE4-4A92-481E-BAED-0685B91C3A47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Evaluator.Surfing", "Ecoternative.Evaluator.Surfing\Ecoternative.Evaluator.Surfing.csproj", "{10D42CE4-4A92-481E-BAED-0685B91C3A47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecoternative.Api", "Ecoternative.Api\Ecoternative.Api.csproj", "{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BAC7C38B-FC46-469B-87A9-AF6107699009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAC7C38B-FC46-469B-87A9-AF6107699009}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAC7C38B-FC46-469B-87A9-AF6107699009}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAC7C38B-FC46-469B-87A9-AF6107699009}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38B6044C-B329-45CA-AD0F-FD1268541E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38B6044C-B329-45CA-AD0F-FD1268541E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38B6044C-B329-45CA-AD0F-FD1268541E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{10D42CE4-4A92-481E-BAED-0685B91C3A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10D42CE4-4A92-481E-BAED-0685B91C3A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10D42CE4-4A92-481E-BAED-0685B91C3A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40149CF4-74B1-4B1C-AC19-313F66EE4F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
