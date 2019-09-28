@@ -151,6 +151,7 @@ namespace Ecoternative.Evaluator.Shopping
                     Distance = distance,
                     Address = closest.address.streetName + " " + closest.address.streetNumber + ", " + closest.address.municipality,
                     Vendor = closest.poi.name,
+                    Vendor_logo = "https://www.guenstiger.de/haendlerlogo/" + vendor.Id,
                     Lat = closest.position.lat,
                     Lng = closest.position.lon,
                     Method = distance < 600 ? "Walking" : "Biking",
@@ -175,6 +176,7 @@ namespace Ecoternative.Evaluator.Shopping
             public double Distance { get; set; }
             public string Address { get; set; }
             public string Vendor { get; set; }
+            public string Vendor_logo { get; set; }
             public string Method { get; set; }
             public string Type => "Local";
             public string Lat { get; set; }
