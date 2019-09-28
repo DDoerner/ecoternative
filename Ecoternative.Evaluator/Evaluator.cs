@@ -14,17 +14,7 @@ namespace Ecoternative.Evaluator
         {
             var system = ChooseService(request.System);
 
-            ServiceResponseModel result;
-            try
-            {
-                result = system.Evaluate(request.Request, request.Request_data);
-            }
-            catch (Exception)
-            {
-                result = new ServiceResponseModel();
-            }
-
-            /*
+            // Intercept for debugging purposes
             return new AlternativeResponseModel()
             {
                 System = "Shopping",
@@ -42,7 +32,16 @@ namespace Ecoternative.Evaluator
                     { "lng", "8.394881" }
                 }
             };
-            */
+
+            ServiceResponseModel result;
+            try
+            {
+                result = system.Evaluate(request.Request, request.Request_data);
+            }
+            catch (Exception)
+            {
+                result = new ServiceResponseModel();
+            }
 
             return new AlternativeResponseModel()
             {
