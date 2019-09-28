@@ -9,5 +9,7 @@ namespace Ecoternative.Core
         public static AppConfiguration CurrentConfiguration;
 
         public string Tomtom_ApiKey { get; set; }
+
+        public string Google_ApiKey { get; set; }
     }
 }

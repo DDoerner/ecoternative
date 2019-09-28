@@ -35,7 +35,8 @@ namespace Ecoternative.Api
 
             AppConfiguration.CurrentConfiguration = new AppConfiguration()
             {
-                Tomtom_ApiKey = Configuration["Tomtom:ApiKey"]
+                Tomtom_ApiKey = Configuration["Tomtom:ApiKey"],
+                Google_ApiKey = Configuration["Google:ApiKey"]
             };
         }
 

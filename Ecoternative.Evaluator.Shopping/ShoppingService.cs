@@ -132,7 +132,7 @@ namespace Ecoternative.Evaluator.Shopping
                 };
                 var url = baseUrl + "&" + string.Join('&', parameters.Select(pair => $"{pair.Key}={pair.Value}"));
 
-                // Get reponse
+                // Get response
                 var client = new RestClient(url);
                 var response = client.Execute(new RestRequest());
                 dynamic result = JsonConvert.DeserializeObject(response.Content);
@@ -142,7 +142,7 @@ namespace Ecoternative.Evaluator.Shopping
                     continue;
                 var closest = result.results[0];
                 var distance = double.Parse(closest.dist.ToString());
-                if (distance > bestResult?.Distance)
+                if (bestResult != null && distance > bestResult.Distance)
                     continue;
 
                 // prepare result

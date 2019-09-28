@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ecoternative.Core\Ecoternative.Core.csproj" />
   </ItemGroup>
 

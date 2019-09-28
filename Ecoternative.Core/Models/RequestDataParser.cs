@@ -40,6 +40,19 @@ namespace Ecoternative.Core.Models
             }
         }
 
+        protected DateTime ParseDateTime(string key)
+        {
+            var val = GetValueOrThrowException(key);
+            try
+            {
+                return DateTime.Parse(val);
+            }
+            catch (FormatException)
+            {
+                throw new ArgumentException("Request data has an invalid format: " + key);
+            }
+        }
+
         protected bool ParseBool(string key)
         {
             var val = GetValueOrThrowException(key);
