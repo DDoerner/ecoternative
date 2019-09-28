@@ -14,7 +14,7 @@ namespace Ecoternative.Evaluator
         public async Task<AlternativeResponseModel> EvaluateAsync(AlternativeRequestModel request)
         {
             var system = ChooseService(request.System);
-            
+
             ServiceResponseModel result;
             try
             {

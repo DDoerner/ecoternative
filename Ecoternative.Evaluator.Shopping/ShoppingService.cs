@@ -2,6 +2,7 @@
 using Ecoternative.Core.Models;
 using Ecoternative.Evaluator.Shopping.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -41,8 +42,8 @@ namespace Ecoternative.Evaluator.Shopping
             return new ServiceResponseModel()
             {
                 Alternative_found = true,
-                Alternative_saving = saving,
-                Alternative_url = productUrl,
+                Alternative_saving = (decimal) Math.Round(saving, 2),
+                Alternative_url = responseData.LocationUrl,
                 Alternative_data = responseData.ToDictionary()
             };
         }
@@ -72,7 +73,7 @@ namespace Ecoternative.Evaluator.Shopping
                 }
             }
 
-            var regex = "<a\\s+class=\"stopBubbling\"\\s+href=\"([^\"]+)\"\\s+title=";
+            const string regex = "<a\\s+class=\"stopBubbling\"\\s+href=\"([^\"]+)\"\\s+title=";
             var match = Regex.Match(sourceCode, regex);
             if (!match.Success)
                 throw new AlternativeNotFoundException();
@@ -152,7 +153,8 @@ namespace Ecoternative.Evaluator.Shopping
                     Vendor = closest.poi.name,
                     Lat = closest.position.lat,
                     Lng = closest.position.lon,
-                    Method = distance < 600 ? "Walking" : "Bike"
+                    Method = distance < 600 ? "Walking" : "Bike",
+                    LocationUrl = $"https://www.google.com/maps/place/X/@{closest.position.lat},{closest.position.lon},18z"
                 };
             }
 
@@ -161,10 +163,10 @@ namespace Ecoternative.Evaluator.Shopping
 
             return Task.FromResult(bestResult);
         }
-        
-        private async Task<decimal> CalculateSavingAsync(TomTomResult responseData)
+
+        private async Task<double> CalculateSavingAsync(TomTomResult responseData)
         {
-            return 3;
+            return responseData.Distance * 0.270;
         }
 
         private class TomTomResult
@@ -176,10 +178,15 @@ namespace Ecoternative.Evaluator.Shopping
             public string Type => "Local";
             public string Lat { get; set; }
             public string Lng { get; set; }
+            public string LocationUrl { get; set; }
 
             public IDictionary<string, string> ToDictionary()
             {
-                return JsonConvert.DeserializeObject<IDictionary<string, string>>(JsonConvert.SerializeObject(this));
+                var settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                };
+                return JsonConvert.DeserializeObject<IDictionary<string, string>>(JsonConvert.SerializeObject(this, settings));
             }
         }
     }

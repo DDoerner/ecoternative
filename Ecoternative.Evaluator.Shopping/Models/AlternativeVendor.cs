@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ecoternative.Evaluator.Shopping.Models
 {
-    internal class AlternativeVendor
+    internal sealed class AlternativeVendor
     {
         public static AlternativeVendor Saturn = new AlternativeVendor("Saturn", "drrdz.png");
         public static AlternativeVendor Penny = new AlternativeVendor("Penny", "fufdf.png");
