@@ -53,7 +53,19 @@ function callbackHook(data)
                 <img style="display: block; margin-top: 5px; margin-left: auto; margin-right: auto; width: 60%;" src="https://i.imgsafe.org/f9/f906301ceb.png">
             </div>
             <div style="grid-column: 2 / 4; grid-row: 1 / 5; color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
-                <img style="object-fit: cover; width: 100%; height: 100%; padding: 0px; margin: 0px;" src="https://cdn.wallpapered.com/wp-content/uploads/2018/09/01181104/OS-Street-BW.jpg">
+                <img style="object-fit: cover; width: 100%; height: 100%; padding: 0px; margin: 0px;" src="
+                    https://maps.googleapis.com/maps/api/staticmap${/*
+                    */""}?markers=color:red%7Clabel:A%7C49.008224,8.399308${/*
+                    */""}&markers=color:blue%7Clabel:B%7C${data.alternative_data.lat},${data.alternative_data.lng}${/*
+                    */""}&size=1000x800&zoom=15${/*
+                    */""}&key=AIzaSyAiSBo9Ne2IEoMPpZsufKRypiq-iuCxspQ${/*
+                    */""}&style=feature:landscape.natural.landcover%7Celement:geometry%7Ccolor:0xffffff${/*
+                    */""}&style=feature:road%7Celement:geometry%7Ccolor:0x000000${/*
+                    */""}&style=feature:road.local%7Celement:geometry%7Ccolor:0x505050${/*
+                    */""}&style=feature:poi%7Celement:geometry%7Ccolor:0xB0B0B0${/*
+                    */""}&style=feature:water%7Celement:geometry%7Ccolor:0x808080${/*
+                    */""}&style=feature:landscape.man_made%7Cvisibility:off${/*
+                    */""}&style=element:labels%7Cvisibility:off" />
             </div>
             <div style="grid-column: 1; grid-row: 4;">
                 <button style="color: #00CE4E; position: absolute; left: 0px; right: 0px; border-radius: 20px; border-color: transparent; font-weight: 800; border-width: 0px; background-color: rgba(255, 255, 255, 1);">Take me there!</button>
