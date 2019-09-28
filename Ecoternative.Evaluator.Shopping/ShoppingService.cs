@@ -42,7 +42,7 @@ namespace Ecoternative.Evaluator.Shopping
             return new ServiceResponseModel()
             {
                 Alternative_found = true,
-                Alternative_saving = (decimal) Math.Round(saving, 2),
+                Alternative_saving = saving,
                 Alternative_url = responseData.LocationUrl,
                 Alternative_data = responseData.ToDictionary()
             };
@@ -149,12 +149,12 @@ namespace Ecoternative.Evaluator.Shopping
                 bestResult = new TomTomResult()
                 {
                     Distance = distance,
-                    Address = closest.address.streetName + " " + closest.address.streetNumber,
+                    Address = closest.address.streetName + " " + closest.address.streetNumber + ", " + closest.address.municipality,
                     Vendor = closest.poi.name,
                     Lat = closest.position.lat,
                     Lng = closest.position.lon,
-                    Method = distance < 600 ? "Walking" : "Bike",
-                    LocationUrl = $"https://www.google.com/maps/place/X/@{closest.position.lat},{closest.position.lon},18z"
+                    Method = distance < 600 ? "Walking" : "Biking",
+                    LocationUrl = $"https://www.google.com/maps/search/?api=1&query={closest.position.lat},{closest.position.lon}"
                 };
             }
 
@@ -164,9 +164,10 @@ namespace Ecoternative.Evaluator.Shopping
             return Task.FromResult(bestResult);
         }
 
-        private async Task<double> CalculateSavingAsync(TomTomResult responseData)
+        private Task<double> CalculateSavingAsync(TomTomResult responseData)
         {
-            return responseData.Distance * 0.270;
+            var saving = responseData.Distance / 1000.0 * 0.270;
+            return Task.FromResult(saving);
         }
 
         private class TomTomResult

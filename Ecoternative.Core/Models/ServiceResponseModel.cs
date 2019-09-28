@@ -17,7 +17,7 @@ namespace Ecoternative.Core.Models
         /// <summary>
         /// Measures how much CO2 will be saved by using the alternative
         /// </summary>
-        public decimal Alternative_saving { get; set; }
+        public double Alternative_saving { get; set; }
         /// <summary>
         /// Additional data that depends on the selected subsystem
         /// </summary>
