@@ -59,7 +59,7 @@ namespace Ecoternative.Evaluator.Travel
             // Find flight time
             const string regex = "<h3 class=\"space\" id=\"flyingtime\">((\\d+) hours?, )?(\\d+) minutes?</h3>";
             var match = Regex.Match(sourceCode, regex);
-            var hours = int.Parse(string.IsNullOrEmpty(match.Groups[1].Value) ? "0" : match.Groups[1].Value);
+            var hours = int.Parse(string.IsNullOrEmpty(match.Groups[2].Value) ? "0" : match.Groups[2].Value);
             var minutes = int.Parse(match.Groups[3].Value);
             var time = new TimeSpan(hours, minutes, 0) + new TimeSpan(0, 40, 0);
 

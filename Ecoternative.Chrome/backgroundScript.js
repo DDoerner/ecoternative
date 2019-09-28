@@ -59,6 +59,7 @@ function updateClimateScore(url)
     if (url === undefined)
     {
         chrome.browserAction.setBadgeText({text: ''});
+        return;
     }
 
     $.ajax({

@@ -1,7 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "ecoternative",
+  "name": "StepByStep - Reduce your carbon footprint",
+  "description": "StepByStep helps you take small steps towards lowering your carbon footprint during your everyday browsing. Just friendly advice on the side.",
   "version": "0.1",
+  "icons": {
+    "128": "icon.png"
+  },
   "background": {
     "scripts": ["scripts/jquery-3.4.1.min.js", "backgroundScript.js"],
     "persistent": true
