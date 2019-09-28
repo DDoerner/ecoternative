@@ -18,7 +18,7 @@ namespace Ecoternative.Evaluator.Surfing
         {
             // Prepare request
             var regex = $"^((https?)://)?(www.)?([\\w\\d]+\\.)*([\\w\\d]+)\\.[\\w\\d]+";
-            request = Regex.Match(request, regex).Groups[4].Value;
+            request = Regex.Match(request, regex).Groups[5].Value;
 
             // Locate database
             string currentPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
