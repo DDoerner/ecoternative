@@ -49,14 +49,16 @@ function callbackHook(data)
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 0px;
    grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; background-color: white; position: fixed; z-index: 100001; left: 20%; right: 20%; top: 20%; bottom: 20%; width: 60%; height: 60%;">
-            <div style="grid-column: 1; text-align: center; height: 100%; width: 300px; background-color: #00ce4e; color: white; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial; padding: 16px 16px;">
+            <div style="grid-column: 1; grid-row: 1 / 5;  text-align: center; height: 100%; width: 300px; background-color: #00ce4e; color: white; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial; padding: 16px 16px;">
                 <img style="display: block; margin-top: 5px; margin-left: auto; margin-right: auto; width: 60%;" src="https://i.imgsafe.org/f9/f906301ceb.png">
-                <div><button>test 1</button><button style="background-color: transparent">test 2</button></div>
             </div>
-            <div style="grid-column: 2 / 4; color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
+            <div style="grid-column: 2 / 4; grid-row: 1 / 5; color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
                 <img style="object-fit: cover; width: 100%; height: 100%; padding: 0px; margin: 0px;" src="https://cdn.wallpapered.com/wp-content/uploads/2018/09/01181104/OS-Street-BW.jpg">
             </div>
-            
+            <div style="grid-column: 1; grid-row: 4;">
+                <button style="color: #00CE4E; position: absolute; left: 0px; right: 0px; border-radius: 20px; border-color: transparent; font-weight: 800; border-width: 0px; background-color: rgba(255, 255, 255, 1);">Take me there!</button>
+                <button style=" background-color: transparent; border-color: transparent; color: white; font-size: 14px; margin-top: 4px;">CANCEL</button>
+            </div>
         </div>`
 
    if (document.getElementById('addToCart_feature_div') !== undefined)
