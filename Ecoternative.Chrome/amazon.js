@@ -7,6 +7,10 @@ function callbackHook(data)
     var script= document.createElement('script');
     script.type= 'text/javascript';
     script.src= 'clickHandlerAmazon.js';
+    script.onreadystatechange= function () {
+        alert('attach')
+        if (this.readyState == 'complete') alert('scirpt redy!');
+     }
     head.appendChild(script);
 
     if (!data.alternative_found) {
@@ -35,11 +39,31 @@ function callbackHook(data)
     */
 
    var newEl = document.createElement('div');
-   newEl.innerHTML = `<div style="margin-bottom: 10px;"><a href="https://google.com"><button onclick="amazonButtonClick()" style="background-color: #00ce4e; width: 100%; padding: 10px; border-radius: 3px; color: black;">Save ${Math.round(data.alternative_saving * 1000)} grams CO<sub>2</sub></button></a></div>`;
+   newEl.innerHTML = `<div style="margin-bottom: 10px;"><a href="https://google.com"><button onclick="amazonButtonClick()" style="z-index: 100001; background-color: #00ce4e; width: 100%; padding: 10px; border-radius: 3px; color: black;">Save ${Math.round(data.alternative_saving * 1000)} grams CO<sub>2</sub></button></a></div>`;
 
-    if (document.getElementById('addToCart_feature_div') !== undefined)
+   var blender = document.createElement('div');
+   blender.innerHTML = `<div style="position: fixed; z-index: 100000; background-color: rgba(0, 0, 0, 0.7); left: 0px; right: 0px; top: 0px; bottom: 0px;"></div>`;
+   
+   var modal = document.createElement('div');
+   modal.innerHTML = `<div style="display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 0px;
+   grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; background-color: white; position: fixed; z-index: 100001; left: 20%; right: 20%; top: 20%; bottom: 20%; width: 60%; height: 60%;">
+            <div style="grid-column: 1; text-align: center; height: 100%; width: 300px; background-color: #00ce4e; color: white; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial; padding: 16px 16px;">
+                <img style="display: block; margin-top: 5px; margin-left: auto; margin-right: auto; width: 60%;" src="https://i.imgsafe.org/f9/f906301ceb.png">
+                <div><button>test 1</button><button style="background-color: transparent">test 2</button></div>
+            </div>
+            <div style="grid-column: 2 / 4; color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
+                <img style="object-fit: cover; width: 100%; height: 100%; padding: 0px; margin: 0px;" src="https://cdn.wallpapered.com/wp-content/uploads/2018/09/01181104/OS-Street-BW.jpg">
+            </div>
+            
+        </div>`
+
+   if (document.getElementById('addToCart_feature_div') !== undefined)
     {
         document.getElementById('addToCart_feature_div').parentNode.insertBefore(newEl, document.getElementById('addToCart_feature_div'));
+        document.body.append(blender);
+        document.body.append(modal);
     }
     else if (document.getElementById('desktop_unifiedPrice') !== undefined)
     {
