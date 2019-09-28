@@ -3,6 +3,12 @@ chrome.runtime.sendMessage({ message: 'productName', name: productName }, callba
 
 function callbackHook(data)
 {
+    var head= document.getElementsByTagName('head')[0];
+    var script= document.createElement('script');
+    script.type= 'text/javascript';
+    script.src= 'clickHandlerAmazon.js';
+    head.appendChild(script);
+
     if (!data.alternative_found) {
         var newEl = document.createElement('div');
         newEl.innerHTML = '<div style="color: red">nothing found</div>';
@@ -10,6 +16,7 @@ function callbackHook(data)
         return;
     }
 
+    /*
     var newEl = document.createElement('div');
     newEl.style = `
         background-image: linear-gradient(to bottom, #063c39, #083734, #0a312f, #0b2c2a, #0c2725); 
@@ -25,10 +32,14 @@ function callbackHook(data)
                             <button style="font-weight: bold; margin: 8px 0px; vertical-align: middle; font-size: 16px; grid-column: 5; grid-row: 1 / 5; border-radius: 50px; border-color: transparent; background-image: linear-gradient(to right, #00baae, #00c4b7, #00cebf, #00d8c8, #00e2d1); color: #083331;"><a href="${data.alternative_url}" style="color: #0A2D2B; vertical-align: middle;"><div style="display: inline-block;"><div><center>Save ${Math.round(data.alternative_saving * 1000)}g</center></div><div> CO<sub>2</sub> now!</div></div></a></button>
                         </div>`;
     newEl.classList = 'priceInfo';
+    */
 
-    if (document.getElementById('unifiedPrice_feature_div') !== undefined)
+   var newEl = document.createElement('div');
+   newEl.innerHTML = `<div style="margin-bottom: 10px;"><a href="https://google.com"><button onclick="amazonButtonClick()" style="background-color: #00ce4e; width: 100%; padding: 10px; border-radius: 3px; color: black;">Save ${Math.round(data.alternative_saving * 1000)} grams CO<sub>2</sub></button></a></div>`;
+
+    if (document.getElementById('addToCart_feature_div') !== undefined)
     {
-        document.getElementById('unifiedPrice_feature_div').parentNode.insertBefore(newEl, document.getElementById('unifiedPrice_feature_div'));
+        document.getElementById('addToCart_feature_div').parentNode.insertBefore(newEl, document.getElementById('addToCart_feature_div'));
     }
     else if (document.getElementById('desktop_unifiedPrice') !== undefined)
     {

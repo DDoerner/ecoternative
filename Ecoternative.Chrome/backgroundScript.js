@@ -44,7 +44,14 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
 });
 
 chrome.tabs.onActivated.addListener( function (tabId, changeInfo, tab) {
-    updateClimateScore(tab.url)
+    if (url === undefined) 
+    {
+        updateClimateScore(undefined)
+    }
+    else
+    {
+        updateClimateScore(amazonButtonClick)
+    }
 });
 
 function updateClimateScore(url)
