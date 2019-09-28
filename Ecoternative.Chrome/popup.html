@@ -1,0 +1,83 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"></link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body style="padding: 1px; border-width: 0px;">
+    <div class="popup-background">
+        <div class="loader" style="position: absolute; left: 110px; top: 210px;" id="spinner"></div>
+        <div class="container pb-2" style="opacity: 0.0" id="contentcontainer">
+            <div class="row mb-5 mt-2">
+                <div class="col-10 text-left">
+                    <h3 class="title" style="margin-bottom: -2px; letter-spacing: 0px; font-weight: 500; color: #D9E0E0"><b>ecoternative.at</b></h3>
+                    <span style="font-size: 14px; padding-top: -20px; color: #D9E0E0; font-weight: 100">For sustainable browsing.</span>
+                </div>
+                <div style="margin-left: -20px" class="col-2 d-flex align-items-center justify-content-center">
+                    <div class="my-auto">
+                        <img src="logo.png" width="250%">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 mb-4">
+                <div class="col-2 pr-0 pt-0 pb-0">
+                    <img width="80%" style="opacity: 0.6" src="images/basket.png">
+                </div>
+                <div class="col-6 my-auto pr-0 pl-2">
+                    Eco Shopping
+                </div>
+                <div class="col-4">
+                    <div class="float-right my-auto">
+                        <label class="switch">
+                            <input type="checkbox" id="ecoshopping">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>   
+                </div>
+            </div>
+            <hr/>
+            <div class="row mt-4 mb-1">
+                    <div class="col-2 pr-0 pt-0 pb-0">
+                        <img width="80%" style="opacity: 0.6" src="images/signs.png">
+                    </div>
+                    <div class="col-6 my-auto pr-0 pl-2">
+                        Eco Travel
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right my-auto">
+                            <label class="switch">
+                                <input type="checkbox" id="ecotravel">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>   
+                    </div>
+                </div>
+            <hr/>
+            <div class="row mt-4 mb-3">
+                    <div class="col-2 pr-0 pt-0 pb-0">
+                        <img style="opacity: 0.6" width="80%" src="images/speed.png">
+                    </div>
+                    <div class="col-6 my-auto pr-0 pl-2">
+                        Web Ecometer
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right my-auto">
+                            <label class="switch">
+                                <input type="checkbox" id="ecometer">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>   
+                    </div>
+            </div>
+
+            <div class="row mt-5 mb-3 m-1 pt-3 pb-3 p-2" style="background-color: #37615E; border-radius: 35px;">
+                <div class="col-12 text-center" style="font-weight: 500; font-size: 40px;">255.47</div>
+                <div class="col-12 text-center" style="font-weight: 100">Kilograms CO<sub>2</sub> saved.</div>
+            </div>
+        </div>
+
+        <script src="scripts/jquery-3.4.1.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="scripts/resetState.js"></script>
+    </div>
+</body>
