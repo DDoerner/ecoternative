@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ecoternative.Api.Models;
 using Ecoternative.Core.Models;
 using Ecoternative.Evaluator;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Test.Controllers
+namespace Ecoternative.Api.Controllers
 {
     [Route("")]
     [ApiController]
@@ -20,9 +19,9 @@ namespace Test.Controllers
         /// <returns>Response object about the found alternative</returns>
         [HttpPost]
         [Produces("application/json")]
-        public ActionResult<AlternativeResponseModel> FindAlternative(AlternativeRequestModel model)
+        public async Task<ActionResult<AlternativeResponseModel>> FindAlternativeAsync(AlternativeRequestModel model)
         {
-            return new Evaluator().Evaluate(model);
+            return await new EvaluatorService().EvaluateAsync(model).ConfigureAwait(false);
         }
     }
 }

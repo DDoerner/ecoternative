@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecoternative.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Test
+namespace Ecoternative.Api
 {
     public class Startup
     {
@@ -31,6 +32,11 @@ namespace Test
             {
                 c.SwaggerDoc("v1", new Info { Title = "Ecoternative API", Version = "v1" });
             });
+
+            AppConfiguration.CurrentConfiguration = new AppConfiguration()
+            {
+                Tomtom_ApiKey = Configuration["Tomtom:ApiKey"]
+            };
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
