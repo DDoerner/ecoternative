@@ -5,10 +5,25 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
+    <AssemblyName>Ecoternative.Evaluator.Surfing</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\hack_train.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\hack_train.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ecoternative.Core\Ecoternative.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

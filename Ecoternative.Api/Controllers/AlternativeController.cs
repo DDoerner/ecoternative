@@ -23,5 +23,13 @@ namespace Ecoternative.Api.Controllers
         {
             return await new EvaluatorService().EvaluateAsync(model).ConfigureAwait(false);
         }
+        
+        [Route("Score")]
+        [HttpGet]
+        [Produces("application/json")]
+        public async Task<ActionResult<EnvScoreResponseModel>> GetCompanyEnvironmentScore(string company)
+        {
+            return await new EvaluatorService().GetCompanyScore(company);
+        }
     }
 }

@@ -40,14 +40,31 @@ namespace Ecoternative.Evaluator
             };
         }
 
-        public IAlternativeService ChooseService(string system)
+        public async Task<EnvScoreResponseModel> GetCompanyScore(string company)
+        {
+            var service = new SurfingService();
+            try
+            {
+                var result = await service.EvaluateAsync(company);
+                return result;
+            }
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                return new EnvScoreResponseModel();
+            }
+        }
+
+        private IAlternativeService ChooseService(string system)
         {
             switch (system.ToLower())
             {
                 case "demo": return new DemoService();
                 case "shopping": return new ShoppingService();
                 case "travel": return new TravelService();
-                case "surfing": return new SurfingService();
                 default: throw new ArgumentException("The given subsystem is not valid");
             }
         }
