@@ -30,6 +30,7 @@ namespace Ecoternative.Evaluator.Travel
             var transitRoute = await FindTransitAlternativeAsync(requestData);
             var saving = await CalculateSavingAsync(transitRoute, flightRoute);
 
+            transitRoute.Original_time = flightRoute.Original_time + 2;
             return new ServiceResponseModel()
             {
                 Alternative_found = true,
@@ -56,15 +57,15 @@ namespace Ecoternative.Evaluator.Travel
             var sourceCode = response.Content;
 
             // Find flight time
-            const string regex = "<h3 class=\"space\" id=\"flyingtime\">(\\d+) hours?, (\\d+) minutes?</h3>";
+            const string regex = "<h3 class=\"space\" id=\"flyingtime\">((\\d+) hours?, )?(\\d+) minutes?</h3>";
             var match = Regex.Match(sourceCode, regex);
-            var hours = int.Parse(match.Groups[1].Value);
-            var minutes = int.Parse(match.Groups[2].Value);
+            var hours = int.Parse(string.IsNullOrEmpty(match.Groups[1].Value) ? "0" : match.Groups[1].Value);
+            var minutes = int.Parse(match.Groups[3].Value);
             var time = new TimeSpan(hours, minutes, 0) + new TimeSpan(0, 40, 0);
 
             var result = new MapsResult()
             {
-                Travel_time = time.Hours + (time.Minutes / 60.0),
+                Original_time = time.Hours + (time.Minutes / 60.0),
                 Departure = data.From,
                 Destination = data.To,
                 LocationUrl = null,
@@ -122,7 +123,7 @@ namespace Ecoternative.Evaluator.Travel
 
         private Task<double> CalculateSavingAsync(MapsResult transitData, MapsResult flightData)
         {
-            var flightEmissions = flightData.Travel_time * 200.0;
+            var flightEmissions = flightData.Original_time * 200.0;
             var transitEmissions = flightEmissions * 0.15;
             return Task.FromResult(flightEmissions - transitEmissions);
         }
@@ -130,6 +131,7 @@ namespace Ecoternative.Evaluator.Travel
         private class MapsResult
         {
             public double Travel_time { get; set; }
+            public double Original_time { get; set; }
             public string Method { get; set; }
             public string Departure { get; set; }
             public string Destination { get; set; }
