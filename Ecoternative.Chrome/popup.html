@@ -73,7 +73,7 @@
                         <img width="80%" src="images/marker.png">
                     </div>
                     <div class="col-10 pl-2">
-                        <input class="p-0" placeholder="Your Location" type="text" />
+                        <input class="p-0" placeholder="Your Location" type="text" onblur="function () { updateLocation(this.value); }" />
                     </div>
             </div>
         </div>
