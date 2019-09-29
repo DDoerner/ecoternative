@@ -58,7 +58,8 @@ function updateClimateScore(url)
 {   
     if (url === undefined)
     {
-        chrome.browserAction.setBadgeText({text: ''});
+        chrome.browserAction.setBadgeText({text: '?'});
+        chrome.browserAction.setBadgeBackgroundColor({color: "#534F4B"})
         return;
     }
 
@@ -67,6 +68,14 @@ function updateClimateScore(url)
         type: "GET",
         dataType: 'json',
         success: function (response) {
+
+            if (!response.env_score_known) 
+            {
+                chrome.browserAction.setBadgeText({text: '?'});
+                chrome.browserAction.setBadgeBackgroundColor({color: "#534F4B"})
+                return
+            }
+
             var score = Math.round(response.env_score);
             chrome.browserAction.setBadgeText({text: score.toString()});
 

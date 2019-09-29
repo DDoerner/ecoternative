@@ -4,7 +4,7 @@ body {
 }
 
 .popup-background {
-    background-image: linear-gradient(to bottom, #063c39, #083734, #0a312f, #0b2c2a, #0c2725);
+    background-color: #00CE4E;
     margin: 1px;
     width: 300px;
     padding: 10px;
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, div {
   }
 
   hr {
-    background-color: #507472;
+    background-color: #e1e1e1;
   }
   
   .title {
