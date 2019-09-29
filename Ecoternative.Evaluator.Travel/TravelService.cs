@@ -82,8 +82,8 @@ namespace Ecoternative.Evaluator.Travel
                 {
                     { "origin", data.From },
                     { "destination", data.To },
-                    { "departure_time", "now" },
-                    //{ "departure_time", ((DateTimeOffset)data.Date.AddHours(9)).ToUnixTimeSeconds().ToString() },
+                    //{ "departure_time", "now" },
+                    { "departure_time", ((DateTimeOffset)data.Date.AddHours(9)).ToUnixTimeSeconds().ToString() },
                     { "mode", "transit" }
                 };
             var url = baseUrl + "&" + string.Join('&', parameters.Select(pair => $"{pair.Key}={pair.Value}"));
