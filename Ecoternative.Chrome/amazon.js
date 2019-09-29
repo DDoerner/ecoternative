@@ -114,7 +114,7 @@ grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; back
 
 
 
-    if (document.getElementById('addToCart_feature_div') !== undefined)
+    if (document.getElementById('addToCart_feature_div'))
     {
         document.getElementById('addToCart_feature_div').parentNode.insertBefore(newEl, document.getElementById('addToCart_feature_div'));
         modal.style.visibility = 'hidden';
@@ -122,10 +122,24 @@ grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; back
         document.body.append(blender);
         document.body.append(modal);
     }
-    else if (document.getElementById('desktop_unifiedPrice') !== undefined)
+    else if (document.getElementById('add-to-cart-button-ubb'))
     {
-        document.getElementById('desktop_unifiedPrice').parentNode.insertBefore(newEl, document.getElementById('desktop_unifiedPrice'));
+        document.getElementById('add-to-cart-button-ubb').parentNode.parentNode.parentNode.prepend(newEl);
+        modal.style.visibility = 'hidden';
+        blender.style.visibility = 'hidden';
+        document.body.append(blender);
+        document.body.append(modal);
     }
+    else if (document.getElementById('add-to-cart-button'))
+    {
+        document.getElementById('add-to-cart-button').parentNode.parentNode.prepend(newEl);
+        modal.style.visibility = 'hidden';
+        blender.style.visibility = 'hidden';
+        document.body.append(blender);
+        document.body.append(modal);
+    }
+
+   
 
     function toggleModal()
     {
