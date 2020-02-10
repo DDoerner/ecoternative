@@ -55,12 +55,16 @@ function replaceMainDeal(data) {
     var hours = Math.floor(data.alternative_data.travel_time);
     var minutes = Math.round(Math.round((data.alternative_data.travel_time - Math.floor(data.alternative_data.travel_time)) * 100) / 100 * 60);
     wrapperCopy.querySelector('.od-resultpage-highlighted-title').innerText = "Eco Deal! Why not take the train?";
-    var endTime = new Date(2019, 10, 19, 9 + hours, minutes)
+    var endDate = new Date();
+    endDate.setDate(endDate.getDate() + (1 + 7 - endDate.getDay()) % 7);
+    endDate.setHours(9 + hours);
+    endDate.setMinutes(minutes);
+    var endTime = endDate;
     wrapperCopy.querySelector('.od-resultpage-segment-info-tip > div').innerText = "09:00 - " + endTime.getHours() + ":" + endTime.getMinutes();
     wrapperCopy.querySelector('.flight_info_cities').innerText = data.alternative_data.departure + " to " + data.alternative_data.destination;
     wrapperCopy.querySelector('.od-secondary-flight-info-time-stops-wrapper .odf-text-nowrap').innerText = hours + "h " + minutes + "'";
     var priceElem = wrapperCopy.querySelector('.od-price-container .odf-text-2xl');
-    priceElem.innerText = priceElem.innerText * 1.6;
+    priceElem.innerText = (priceElem.innerText * 1.6).toFixed(2);
     wrapperCopy.querySelector('.od-primary-info-airline img').remove();
     wrapperCopy.querySelector('.od-results-leg-descriptor').remove();
     wrapperCopy.querySelector('.od-resultpage-buttonbox').style.backgroundColor = "#00ce4e2a";
@@ -71,7 +75,7 @@ function replaceMainDeal(data) {
     wrapperCopy.querySelector('.saving_message .odf-text-mono-color-04').innerText = " than with a flight!";
 
     var logo = document.createElement('img');
-    logo.src = "https://i.imgsafe.org/ff/ff38aa2900.png";
+    logo.src = chrome.runtime.getURL("images/Icon_white.png");
     logo.style.height = "30px";
     logo.style.float = "right";
     logo.style.marginRight = "18px";
@@ -99,7 +103,7 @@ function setupEcoPopup(data) {
     grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; background-color: white; position: fixed; z-index: 100001; left: 20%; right: 20%; top: 20%; bottom: 20%; width: 60%; height: 60%;">
             
             <div style="grid-column: 1; grid-row: 1 / 5;  text-align: center; height: 100%; width: 300px; background-color: #00ce4e; color: white; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial; padding: 16px 16px;">
-                <img style="display: block; margin-top: 0px; margin-left: auto; margin-right: auto; width: 60%;" src="https://i.imgsafe.org/fe/fee8d8ed4f.png">
+                <img style="display: block; margin-top: 0px; margin-left: auto; margin-right: auto; width: 60%;" src="`+chrome.runtime.getURL("images/logo_border.png")+`">
             </div>
             <div style="grid-column: 2 / 4; position: relative; grid-row: 1 / 5; color: black; background-color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
                 <img style="object-fit: cover; width: 100%; height: 100%; opacity: 0.9; padding: 0px; margin: 0px;" src="

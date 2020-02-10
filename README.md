@@ -1,6 +1,6 @@
 # StepByStep - Reduce your carbon footprint
 
-![StepByStep Logo](https://i.imgsafe.org/fe/fee8d8ed4f.png)
+![StepByStep Logo](Ecoternative.Chrome/images/logo_border.png)
 
 ## Inspiration
 Climate change is without a doubt **the greatest challenge that humanity as a whole has ever faced**.

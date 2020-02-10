@@ -40,7 +40,7 @@ function callbackHook(data)
     */
 
    var newEl = document.createElement('div');
-   newEl.innerHTML = `<div style="margin-bottom: 10px;"><button id="ourSubmitActionButton" type="button" style="z-index: 100001; background-image: linear-gradient(to top, #00ce4e, #05d453, #0ada58, #0fe05e, #13e663); width: 100%; padding: 6px; border-radius: 3px; color: #111111; border-color: #858569"><div style="background-color: #2F3840; float: left; border-radius: 2px; padding: 3px; margin: -4px;"><img src="https://i.imgsafe.org/ff/ff38aa2900.png" width="18px"></div>Save ${Math.round(data.alternative_saving * 1000)} grams CO<sub>2</sub></button></div>`;
+   newEl.innerHTML = `<div style="margin-bottom: 10px;"><button id="ourSubmitActionButton" type="button" style="z-index: 100001; background-image: linear-gradient(to top, #00ce4e, #05d453, #0ada58, #0fe05e, #13e663); width: 100%; padding: 6px; border-radius: 3px; color: #111111; border-color: #858569"><div style="background-color: #2F3840; float: left; border-radius: 2px; padding: 3px; margin: -4px;"><img src="`+chrome.runtime.getURL("images/Icon_white.png")+`" width="18px"></div>Save ${Math.round(data.alternative_saving * 1000)} grams CO<sub>2</sub></button></div>`;
 
    
 
@@ -72,7 +72,7 @@ grid-gap: 0px;
 grid-auto-rows: minmax(100px, auto); overflow: hidden; border-radius: 10px; background-color: white; position: fixed; z-index: 100001; left: 20%; right: 20%; top: 20%; bottom: 20%; width: 60%; height: 60%;">
         
         <div style="grid-column: 1; grid-row: 1 / 5;  text-align: center; height: 100%; width: 300px; background-color: #00ce4e; color: white; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial; padding: 16px 16px;">
-            <img style="display: block; margin-top: 0px; margin-left: auto; margin-right: auto; width: 60%;" src="https://i.imgsafe.org/fe/fee8d8ed4f.png">
+            <img style="display: block; margin-top: 0px; margin-left: auto; margin-right: auto; width: 60%;" src="`+chrome.runtime.getURL("images/logo_border.png")+`">
         </div>
         <div style="grid-column: 2 / 4; position: relative; grid-row: 1 / 5; color: black; background-color: black; padding: 0px; font-size: 18px; font-weight: 500; font-family: Ubuntu, Arial;">
             <img style="object-fit: cover; width: 100%; height: 100%; opacity: 0.9; padding: 0px; margin: 0px;" src="

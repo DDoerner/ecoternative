@@ -16,11 +16,14 @@ chrome.runtime.onMessage.addListener(
           break;
         }
         case 'flightName': {
+            var date = new Date();
+            date.setDate(date.getDate() + 14);
+            var dateStr = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
             $.ajax({
                 url: "https://ecoternative.azurewebsites.net",
                 type: "POST",
                 dataType: 'json',
-                data: JSON.stringify({ system: "Travel", request: 'ganzegal', request_data: { type: "Flight", from: request.from, to: request.to, date: '2019-10-18', date_back: null  }}),
+                data: JSON.stringify({ system: "Travel", request: 'ganzegal', request_data: { type: "Flight", from: request.from, to: request.to, date: dateStr, date_back: null  }}),
                 contentType: "application/json;charset=UTF-8",
                 success: function (response) {
                     senderResponse(response);
